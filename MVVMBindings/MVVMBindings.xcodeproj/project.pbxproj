@@ -14,6 +14,14 @@
 		68A711A81D05AD0C009DFCCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A711A61D05AD0C009DFCCB /* LaunchScreen.storyboard */; };
 		68A711B31D05AD0C009DFCCB /* MVVMBindingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711B21D05AD0C009DFCCB /* MVVMBindingsTests.swift */; };
 		68A711BE1D05AD0C009DFCCB /* MVVMBindingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711BD1D05AD0C009DFCCB /* MVVMBindingsUITests.swift */; };
+		68A711CD1D05AD7B009DFCCB /* TemperatureConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711CC1D05AD7B009DFCCB /* TemperatureConverter.swift */; };
+		68A711D01D05AEA4009DFCCB /* Farenheit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711CF1D05AEA4009DFCCB /* Farenheit.swift */; };
+		68A711D21D05AF71009DFCCB /* Kelvin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711D11D05AF71009DFCCB /* Kelvin.swift */; };
+		68A711D41D05AF79009DFCCB /* Rankine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711D31D05AF79009DFCCB /* Rankine.swift */; };
+		68A711D61D05AF82009DFCCB /* Delisle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711D51D05AF82009DFCCB /* Delisle.swift */; };
+		68A711D81D05AF8C009DFCCB /* Newton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711D71D05AF8C009DFCCB /* Newton.swift */; };
+		68A711DA1D05AF9A009DFCCB /* Réaumur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711D91D05AF9A009DFCCB /* Réaumur.swift */; };
+		68A711DC1D05AFA9009DFCCB /* Rømer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711DB1D05AFA9009DFCCB /* Rømer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		68A711B91D05AD0C009DFCCB /* MVVMBindingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMBindingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A711BD1D05AD0C009DFCCB /* MVVMBindingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMBindingsUITests.swift; sourceTree = "<group>"; };
 		68A711BF1D05AD0C009DFCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68A711CC1D05AD7B009DFCCB /* TemperatureConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
+		68A711CF1D05AEA4009DFCCB /* Farenheit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Farenheit.swift; sourceTree = "<group>"; };
+		68A711D11D05AF71009DFCCB /* Kelvin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kelvin.swift; sourceTree = "<group>"; };
+		68A711D31D05AF79009DFCCB /* Rankine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rankine.swift; sourceTree = "<group>"; };
+		68A711D51D05AF82009DFCCB /* Delisle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delisle.swift; sourceTree = "<group>"; };
+		68A711D71D05AF8C009DFCCB /* Newton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Newton.swift; sourceTree = "<group>"; };
+		68A711D91D05AF9A009DFCCB /* Réaumur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Réaumur.swift"; sourceTree = "<group>"; };
+		68A711DB1D05AFA9009DFCCB /* Rømer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rømer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +113,8 @@
 		68A7119C1D05AD0C009DFCCB /* MVVMBindings */ = {
 			isa = PBXGroup;
 			children = (
+				68A711CE1D05AE92009DFCCB /* models */,
+				68A711CB1D05AD66009DFCCB /* protocols */,
 				68A7119D1D05AD0C009DFCCB /* AppDelegate.swift */,
 				68A7119F1D05AD0C009DFCCB /* ViewController.swift */,
 				68A711A11D05AD0C009DFCCB /* Main.storyboard */,
@@ -123,6 +141,28 @@
 				68A711BF1D05AD0C009DFCCB /* Info.plist */,
 			);
 			path = MVVMBindingsUITests;
+			sourceTree = "<group>";
+		};
+		68A711CB1D05AD66009DFCCB /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				68A711CC1D05AD7B009DFCCB /* TemperatureConverter.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		68A711CE1D05AE92009DFCCB /* models */ = {
+			isa = PBXGroup;
+			children = (
+				68A711CF1D05AEA4009DFCCB /* Farenheit.swift */,
+				68A711D11D05AF71009DFCCB /* Kelvin.swift */,
+				68A711D31D05AF79009DFCCB /* Rankine.swift */,
+				68A711D51D05AF82009DFCCB /* Delisle.swift */,
+				68A711D71D05AF8C009DFCCB /* Newton.swift */,
+				68A711D91D05AF9A009DFCCB /* Réaumur.swift */,
+				68A711DB1D05AFA9009DFCCB /* Rømer.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68A711D01D05AEA4009DFCCB /* Farenheit.swift in Sources */,
+				68A711D21D05AF71009DFCCB /* Kelvin.swift in Sources */,
+				68A711D81D05AF8C009DFCCB /* Newton.swift in Sources */,
+				68A711CD1D05AD7B009DFCCB /* TemperatureConverter.swift in Sources */,
 				68A711A01D05AD0C009DFCCB /* ViewController.swift in Sources */,
+				68A711DA1D05AF9A009DFCCB /* Réaumur.swift in Sources */,
+				68A711D61D05AF82009DFCCB /* Delisle.swift in Sources */,
+				68A711D41D05AF79009DFCCB /* Rankine.swift in Sources */,
+				68A711DC1D05AFA9009DFCCB /* Rømer.swift in Sources */,
 				68A7119E1D05AD0C009DFCCB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
