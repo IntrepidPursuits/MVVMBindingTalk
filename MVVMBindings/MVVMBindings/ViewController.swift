@@ -34,14 +34,11 @@ class ViewController: UIViewController {
 
     @IBAction func celciusChanged(sender: UITextField) {
         updateValue(sender) {
-            viewModel.updateCelcius($0)
+            self.viewModel.updateCelcius($0)
         }
     }
 
     @IBAction func farenheitChanged(sender: UITextField) {
-        updateValue(sender) {
-            viewModel.updateFarenheit($0)
-        }
     }
 
     @IBAction func kelvinChanged(sender: UITextField) {
