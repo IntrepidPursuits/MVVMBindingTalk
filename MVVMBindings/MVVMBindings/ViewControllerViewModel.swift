@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 final class ViewControllerViewModel {
+    let disposeBag = DisposeBag()
 
     let celciusTextValue = Variable<String>("")
     let farenheitTextValue = Variable<String>("")
@@ -57,6 +58,10 @@ final class ViewControllerViewModel {
         vars.append(rømerTextValue)
 
         setTextValues(-1)
+
+        celciusTextValue.asObservable().subscribeNext {
+            self.updateCelcius($0)
+        }.addDisposableTo(disposeBag)
     }
 
     private func updateValue(text: String?, handler: Double -> Void) {

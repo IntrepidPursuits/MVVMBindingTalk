@@ -1,16 +1,21 @@
 PODS:
+  - Intrepid/Rx (0.3.3):
+    - RxCocoa (~> 2.0)
+    - RxSwift (~> 2.0)
   - RxCocoa (2.5.0):
     - RxSwift (~> 2.5)
   - RxSwift (2.5.0)
 
 DEPENDENCIES:
+  - Intrepid/Rx
   - RxCocoa
   - RxSwift
 
 SPEC CHECKSUMS:
+  Intrepid: bb00953ec36cfb8920742dd346e377d950189016
   RxCocoa: e1b1562e57a554d0fb2aabf9d71b637f177257c7
   RxSwift: 402b41a50e922a0368fc14cb3bc9f4427920e8ae
 
-PODFILE CHECKSUM: 8104adf8daa156246914c324c6233d17df9d983e
+PODFILE CHECKSUM: fa0a2344fc17e0a82113f007317db2f595715d57
 
 COCOAPODS: 1.0.1
