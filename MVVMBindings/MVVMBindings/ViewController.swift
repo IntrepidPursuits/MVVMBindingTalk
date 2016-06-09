@@ -9,16 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var tempConverters: [TemperatureConverter] = [
-                           Celcius(celcius: 0),
-                           Farenheit(celcius: 0),
-                           Kelvin(celcius: 0),
-                           Rankine(celcius: 0),
-                           Newton(celcius: 0),
-                           Réaumur(celcius: 0),
-                           Rømer(celcius: 0),
-                         ]
+    let viewModel = ViewControllerViewModel()
 
     @IBOutlet weak var celciusTextField: UITextField!
     @IBOutlet weak var farenheitTextField: UITextField!
@@ -30,41 +21,27 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+        updateUI(UITextField())
     }
 
 
-    @IBAction func celciusChanged(sender: UITextField) {
-        if let textValue = sender.text,let degrees = Double(textValue) {
-            tempConverters[0].degrees = degrees
-
-            tempConverters[1].celcius = degrees
-            tempConverters[2].celcius = degrees
-            tempConverters[3].celcius = degrees
-            tempConverters[4].celcius = degrees
-            tempConverters[5].celcius = degrees
-            tempConverters[6].celcius = degrees
+    private func updateValue(textField: UITextField, handler: Double -> Void) {
+        if let textValue = textField.text, let degrees = Double(textValue) {
+            handler(degrees)
+            updateUI(textField)
         }
+    }
 
-        farenheitTextField.text = tempConverters[1].formatted
-        kelvinTextField.text = tempConverters[2].formatted
-        rankineTextField.text = tempConverters[3].formatted
-        newtonTextField.text = tempConverters[4].formatted
-        réaumurTextField.text = tempConverters[5].formatted
-        rømerTextField.text = tempConverters[6].formatted
+    @IBAction func celciusChanged(sender: UITextField) {
+        updateValue(sender) {
+            viewModel.updateCelcius($0)
+        }
     }
 
     @IBAction func farenheitChanged(sender: UITextField) {
-        if let textValue = sender.text,let degrees = Double(textValue) {
-            tempConverters[1].degrees = degrees
+        updateValue(sender) {
+            viewModel.updateFarenheit($0)
         }
-
-        celciusTextField.text = tempConverters[0].formatted
-        kelvinTextField.text = tempConverters[2].formatted
-        rankineTextField.text = tempConverters[3].formatted
-        newtonTextField.text = tempConverters[4].formatted
-        réaumurTextField.text = tempConverters[5].formatted
-        rømerTextField.text = tempConverters[6].formatted
     }
 
     @IBAction func kelvinChanged(sender: UITextField) {
@@ -82,14 +59,20 @@ class ViewController: UIViewController {
     @IBAction func rømerChanged(sender: UITextField) {
     }
 
-    func updateUI() {
-        celciusTextField.text = tempConverters[0].formatted
-        farenheitTextField.text = tempConverters[1].formatted
-        kelvinTextField.text = tempConverters[2].formatted
-        rankineTextField.text = tempConverters[3].formatted
-        newtonTextField.text = tempConverters[4].formatted
-        réaumurTextField.text = tempConverters[5].formatted
-        rømerTextField.text = tempConverters[6].formatted
+    func conditionalUpdate(valueString: String, updateTarget: UITextField, skipField: UITextField ) {
+        if updateTarget != skipField {
+            updateTarget.text = valueString
+        }
+    }
+
+    func updateUI(skipField: UITextField) {
+        conditionalUpdate(viewModel.celciusTextValue, updateTarget: celciusTextField, skipField: skipField)
+        conditionalUpdate(viewModel.farenheitTextValue, updateTarget: farenheitTextField, skipField: skipField)
+        conditionalUpdate(viewModel.kelvinTextValue, updateTarget: kelvinTextField, skipField: skipField)
+        conditionalUpdate(viewModel.rankineTextValue, updateTarget: rankineTextField, skipField: skipField)
+        conditionalUpdate(viewModel.newtonTextValue, updateTarget: newtonTextField, skipField: skipField)
+        conditionalUpdate(viewModel.réaumurTextValue, updateTarget: réaumurTextField, skipField: skipField)
+        conditionalUpdate(viewModel.rømerTextValue, updateTarget: rømerTextField, skipField: skipField)
     }
 }
 

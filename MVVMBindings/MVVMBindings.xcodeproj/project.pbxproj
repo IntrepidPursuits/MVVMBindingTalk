@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		686BCB831D099F7E00047C32 /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686BCB821D099F7E00047C32 /* ViewControllerViewModel.swift */; };
 		68A7119E1D05AD0C009DFCCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7119D1D05AD0C009DFCCB /* AppDelegate.swift */; };
 		68A711A01D05AD0C009DFCCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7119F1D05AD0C009DFCCB /* ViewController.swift */; };
 		68A711A31D05AD0C009DFCCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A711A11D05AD0C009DFCCB /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		686BCB821D099F7E00047C32 /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
 		68A7119A1D05AD0C009DFCCB /* MVVMBindings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMBindings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A7119D1D05AD0C009DFCCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A7119F1D05AD0C009DFCCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				68A711CB1D05AD66009DFCCB /* protocols */,
 				68A7119D1D05AD0C009DFCCB /* AppDelegate.swift */,
 				68A7119F1D05AD0C009DFCCB /* ViewController.swift */,
+				686BCB821D099F7E00047C32 /* ViewControllerViewModel.swift */,
 				68A711A11D05AD0C009DFCCB /* Main.storyboard */,
 				68A711A41D05AD0C009DFCCB /* Assets.xcassets */,
 				68A711A61D05AD0C009DFCCB /* LaunchScreen.storyboard */,
@@ -306,6 +309,7 @@
 				68A711A01D05AD0C009DFCCB /* ViewController.swift in Sources */,
 				68A711DA1D05AF9A009DFCCB /* Réaumur.swift in Sources */,
 				68A711D61D05AF82009DFCCB /* Delisle.swift in Sources */,
+				686BCB831D099F7E00047C32 /* ViewControllerViewModel.swift in Sources */,
 				68A711D41D05AF79009DFCCB /* Rankine.swift in Sources */,
 				68A711DC1D05AFA9009DFCCB /* Rømer.swift in Sources */,
 				68A711E01D064899009DFCCB /* Celcius.swift in Sources */,
@@ -536,6 +540,7 @@
 				68A711C41D05AD0C009DFCCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68A711C51D05AD0C009DFCCB /* Build configuration list for PBXNativeTarget "MVVMBindingsTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +549,7 @@
 				68A711C71D05AD0C009DFCCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68A711C81D05AD0C009DFCCB /* Build configuration list for PBXNativeTarget "MVVMBindingsUITests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +558,7 @@
 				68A711CA1D05AD0C009DFCCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
