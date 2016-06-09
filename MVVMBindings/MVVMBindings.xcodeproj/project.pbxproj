@@ -22,6 +22,7 @@
 		68A711D81D05AF8C009DFCCB /* Newton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711D71D05AF8C009DFCCB /* Newton.swift */; };
 		68A711DA1D05AF9A009DFCCB /* Réaumur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711D91D05AF9A009DFCCB /* Réaumur.swift */; };
 		68A711DC1D05AFA9009DFCCB /* Rømer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711DB1D05AFA9009DFCCB /* Rømer.swift */; };
+		68A711E01D064899009DFCCB /* Celcius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A711DF1D064899009DFCCB /* Celcius.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		68A711D71D05AF8C009DFCCB /* Newton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Newton.swift; sourceTree = "<group>"; };
 		68A711D91D05AF9A009DFCCB /* Réaumur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Réaumur.swift"; sourceTree = "<group>"; };
 		68A711DB1D05AFA9009DFCCB /* Rømer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rømer.swift"; sourceTree = "<group>"; };
+		68A711DF1D064899009DFCCB /* Celcius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Celcius.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				68A711D71D05AF8C009DFCCB /* Newton.swift */,
 				68A711D91D05AF9A009DFCCB /* Réaumur.swift */,
 				68A711DB1D05AFA9009DFCCB /* Rømer.swift */,
+				68A711DF1D064899009DFCCB /* Celcius.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				68A711D61D05AF82009DFCCB /* Delisle.swift in Sources */,
 				68A711D41D05AF79009DFCCB /* Rankine.swift in Sources */,
 				68A711DC1D05AFA9009DFCCB /* Rømer.swift in Sources */,
+				68A711E01D064899009DFCCB /* Celcius.swift in Sources */,
 				68A7119E1D05AD0C009DFCCB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

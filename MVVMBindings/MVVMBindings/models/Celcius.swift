@@ -1,5 +1,5 @@
 //
-//  Kelvin.swift
+//  Celcius.swift
 //  MVVMBindings
 //
 //  Created by Vincent Toms on 6/6/16.
@@ -8,20 +8,19 @@
 
 import Foundation
 
-struct Kelvin: TemperatureConverter {
+struct Celcius: TemperatureConverter {
     var celcius: Double
-
+    
     var degrees: Double {
         get {
-            return celcius + 273.15
+            return celcius
         }
-        
         set {
-            celcius = newValue - 273.15
+            celcius = newValue
         }
     }
 
     var formatted: String {
-        return "\(degrees) K"
+        return "\(degrees) °C"
     }
 }
