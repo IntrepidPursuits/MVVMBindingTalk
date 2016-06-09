@@ -25,17 +25,9 @@ class ViewController: UIViewController {
     }
 
 
-    private func updateValue(textField: UITextField, handler: Double -> Void) {
-        if let textValue = textField.text, let degrees = Double(textValue) {
-            handler(degrees)
-            updateUI(textField)
-        }
-    }
-
     @IBAction func celciusChanged(sender: UITextField) {
-        updateValue(sender) {
-            self.viewModel.updateCelcius($0)
-        }
+        self.viewModel.updateCelcius(sender.text)
+        updateUI(sender)
     }
 
     @IBAction func farenheitChanged(sender: UITextField) {

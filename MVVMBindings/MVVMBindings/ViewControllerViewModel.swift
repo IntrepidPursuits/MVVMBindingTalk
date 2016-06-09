@@ -38,17 +38,23 @@ final class ViewControllerViewModel {
         rømerTextValue = tempConverters[6].formatted
     }
 
+    private func updateValue(textField: String?, handler: Double -> Void) {
+        if let textValue = textField, let degrees = Double(textValue) {
+            handler(degrees)
+        }
+    }
+
     init() {
         setValues()
     }
 
-    func updateCelcius(degrees: Double) {
-        tempConverters[0].degrees = degrees
-
-        for i in 1..<6 {
-            tempConverters[i].celcius = degrees
+    func updateCelcius(degrees: String?) {
+        updateValue(degrees) {
+            self.tempConverters[0].degrees = $0
+            for i in 1..<6 {
+                self.tempConverters[i].celcius = $0
+            }
         }
-
         setValues()
     }
 }
