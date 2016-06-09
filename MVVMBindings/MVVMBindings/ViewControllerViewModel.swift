@@ -65,7 +65,9 @@ final class ViewControllerViewModel {
     }
 
     private func updateValue(text: String?, handler: Double -> Void) {
-        if let textValue = text, let degrees = Double(textValue) {
+        guard let textValue = text else { return }
+
+        if  let degrees = Double(textValue) {
             handler(degrees)
         }
     }
