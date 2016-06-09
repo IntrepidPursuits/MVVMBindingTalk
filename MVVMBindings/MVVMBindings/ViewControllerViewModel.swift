@@ -7,16 +7,19 @@
 //
 
 import Foundation
+import RxSwift
 
 final class ViewControllerViewModel {
 
-    var celciusTextValue = ""
-    var farenheitTextValue = ""
-    var kelvinTextValue = ""
-    var rankineTextValue = ""
-    var newtonTextValue = ""
-    var réaumurTextValue = ""
-    var rømerTextValue = ""
+    let celciusTextValue = Variable<String>("")
+    let farenheitTextValue = Variable<String>("")
+    let kelvinTextValue = Variable<String>("")
+    let rankineTextValue = Variable<String>("")
+    let newtonTextValue = Variable<String>("")
+    let réaumurTextValue = Variable<String>("")
+    let rømerTextValue = Variable<String>("")
+
+    var vars: [Variable<String>] = []
 
     var tempConverters: [TemperatureConverter] = [
         Celcius(celcius: 0),
@@ -28,27 +31,45 @@ final class ViewControllerViewModel {
         Rømer(celcius: 0),
         ]
 
-    func setValues() {
-        celciusTextValue = tempConverters[0].formatted
-        farenheitTextValue = tempConverters[1].formatted
-        kelvinTextValue = tempConverters[2].formatted
-        rankineTextValue = tempConverters[3].formatted
-        newtonTextValue = tempConverters[4].formatted
-        réaumurTextValue = tempConverters[5].formatted
-        rømerTextValue = tempConverters[6].formatted
+    func setTextValues(skip: Int) {
+        for i in 0..<7 {
+            if i != skip {
+                vars[i].value = tempConverters[i].formatted
+            }
+        }
+    }
+
+    func setNumericValues(reference: Int) {
+        for i in 0..<7 {
+            if i != reference {
+                tempConverters[i].celcius = tempConverters[reference].celcius
+            }
+        }
     }
 
     init() {
-        setValues()
+        vars.append(celciusTextValue)
+        vars.append(farenheitTextValue)
+        vars.append(kelvinTextValue)
+        vars.append(rankineTextValue)
+        vars.append(newtonTextValue)
+        vars.append(réaumurTextValue)
+        vars.append(rømerTextValue)
+
+        setTextValues(-1)
     }
 
-    func updateCelcius(degrees: Double) {
-        tempConverters[0].degrees = degrees
-
-        for i in 1..<6 {
-            tempConverters[i].celcius = degrees
+    private func updateValue(text: String?, handler: Double -> Void) {
+        if let textValue = text, let degrees = Double(textValue) {
+            handler(degrees)
         }
+    }
 
-        setValues()
+    func updateCelcius(degrees: String?) {
+        updateValue(degrees) {
+            self.tempConverters[0].degrees = $0
+        }
+        setNumericValues(0)
+        setTextValues(0)
     }
 }

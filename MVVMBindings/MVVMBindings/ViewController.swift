@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
     let viewModel = ViewControllerViewModel()
+    let disposeBag = DisposeBag()
 
     @IBOutlet weak var celciusTextField: UITextField!
     @IBOutlet weak var farenheitTextField: UITextField!
@@ -21,21 +23,38 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI(UITextField())
-    }
 
+        viewModel.celciusTextValue.asObservable().subscribeNext {
+            self.celciusTextField.text = $0
+        }
 
-    private func updateValue(textField: UITextField, handler: Double -> Void) {
-        if let textValue = textField.text, let degrees = Double(textValue) {
-            handler(degrees)
-            updateUI(textField)
+        viewModel.farenheitTextValue.asObservable().subscribeNext {
+            self.farenheitTextField.text = $0
+        }
+
+        viewModel.kelvinTextValue.asObservable().subscribeNext {
+            self.kelvinTextField.text = $0
+        }
+
+        viewModel.newtonTextValue.asObservable().subscribeNext {
+            self.newtonTextField.text = $0
+        }
+
+        viewModel.rankineTextValue.asObservable().subscribeNext {
+            self.rankineTextField.text = $0
+        }
+
+        viewModel.réaumurTextValue.asObservable().subscribeNext {
+            self.réaumurTextField.text = $0
+        }
+
+        viewModel.rømerTextValue.asObservable().subscribeNext {
+            self.rømerTextField.text = $0
         }
     }
 
     @IBAction func celciusChanged(sender: UITextField) {
-        updateValue(sender) {
-            self.viewModel.updateCelcius($0)
-        }
+        self.viewModel.updateCelcius(sender.text)
     }
 
     @IBAction func farenheitChanged(sender: UITextField) {
@@ -54,22 +73,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func rømerChanged(sender: UITextField) {
-    }
-
-    func conditionalUpdate(valueString: String, updateTarget: UITextField, skipField: UITextField ) {
-        if updateTarget != skipField {
-            updateTarget.text = valueString
-        }
-    }
-
-    func updateUI(skipField: UITextField) {
-        conditionalUpdate(viewModel.celciusTextValue, updateTarget: celciusTextField, skipField: skipField)
-        conditionalUpdate(viewModel.farenheitTextValue, updateTarget: farenheitTextField, skipField: skipField)
-        conditionalUpdate(viewModel.kelvinTextValue, updateTarget: kelvinTextField, skipField: skipField)
-        conditionalUpdate(viewModel.rankineTextValue, updateTarget: rankineTextField, skipField: skipField)
-        conditionalUpdate(viewModel.newtonTextValue, updateTarget: newtonTextField, skipField: skipField)
-        conditionalUpdate(viewModel.réaumurTextValue, updateTarget: réaumurTextField, skipField: skipField)
-        conditionalUpdate(viewModel.rømerTextValue, updateTarget: rømerTextField, skipField: skipField)
     }
 }
 
